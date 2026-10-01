@@ -1,0 +1,13 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
+const links = [["/services", "서비스"], ["/diagnosis", "홈페이지 진단"], ["/education", "AI 제작교육"], ["/portfolio", "포트폴리오"], ["/blog", "블로그"], ["/about", "회사소개"]];
+
+export function Header() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  useEffect(() => { const close = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false); document.addEventListener("keydown", close); return () => document.removeEventListener("keydown", close); }, []);
+  return <header className="site-header"><div className="container header-inner"><Link className="brand" href="/" aria-label="커사맨웍스 홈" onClick={() => setOpen(false)}><span>CW</span><b>CURSAMANWORKS</b></Link><nav id="primary-navigation" className={open ? "nav is-open" : "nav"} aria-label="주요 메뉴"><ul>{links.map(([href, label]) => <li key={href}><Link href={href} onClick={() => setOpen(false)} aria-current={pathname.startsWith(href) ? "page" : undefined}>{label}</Link></li>)}</ul></nav><Link className="button button--small header-cta" href="/contact">문의하기</Link><button className="menu-button" type="button" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}><span /><span /><span /><b className="sr-only">메뉴 {open ? "닫기" : "열기"}</b></button></div></header>;
+}

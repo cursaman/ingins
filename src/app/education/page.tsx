@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
+import { SubmissionForm } from "@/components/submission-form";
+export const metadata: Metadata = { title: "AI 홈페이지 제작교육", description: "AI와 함께 기획부터 공개까지 진행하는 실습형 교육" };
+export default function EducationPage() { return <main id="main-content"><PageHero eyebrow="AI Website Class" title="AI와 함께 직접 만드는 홈페이지 제작교육" description="기획, 문구, 화면 제작과 공개까지 실제 결과물을 만드는 순서로 진행합니다." /><section className="section"><div className="container metric-grid"><article><strong>01</strong><h2>기획</h2><p>목표 고객과 핵심 서비스, 방문자의 질문을 정리합니다.</p></article><article><strong>02</strong><h2>제작</h2><p>AI를 활용해 문구와 구조를 만들고 반응형 화면을 구현합니다.</p></article><article><strong>03</strong><h2>공개</h2><p>검수 기준과 운영 방법을 익히고 실제 웹에 공개합니다.</p></article></div></section><section className="section section--soft"><div className="container form-layout"><aside><p className="eyebrow">Apply</p><h2>교육 상담 신청</h2><p>현재 경험과 만들고 싶은 홈페이지를 알려주세요.</p></aside><SubmissionForm kind="education" /></div></section></main>; }

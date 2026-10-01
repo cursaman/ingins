@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
+import { SubmissionForm } from "@/components/submission-form";
+export const metadata: Metadata = { title: "홈페이지 진단", description: "모바일, 속도, 검색, 문의 흐름과 콘텐츠를 점검합니다" };
+export default function DiagnosisPage() { return <main id="main-content"><PageHero eyebrow="Website Checkup" title="전체 재제작 전에 현재 상태부터 확인하세요" description="모바일, 속도, 검색 노출, 문의 흐름과 콘텐츠를 기준으로 개선 우선순위를 살펴봅니다." /><section className="section"><div className="container metric-grid"><article><strong>01</strong><h2>모바일</h2><p>작은 화면에서도 정보와 버튼을 편하게 사용할 수 있는지 확인합니다.</p></article><article><strong>02</strong><h2>속도</h2><p>이미지와 코드, 서버 응답에서 지연되는 부분을 살펴봅니다.</p></article><article><strong>03</strong><h2>검색·문의</h2><p>검색 기본 설정과 상담으로 이어지는 흐름을 확인합니다.</p></article></div></section><section className="section section--soft"><div className="container form-layout"><aside><p className="eyebrow">Apply</p><h2>홈페이지 진단 신청</h2><p>주소와 현재 고민을 알려주시면 확인 가능한 범위를 안내합니다.</p></aside><SubmissionForm kind="diagnosis" /></div></section></main>; }

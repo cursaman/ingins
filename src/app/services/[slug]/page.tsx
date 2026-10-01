@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { services } from "@/lib/site-data";
+export function generateStaticParams() { return services.map(({ slug }) => ({ slug })); }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const item = services.find((entry) => entry.slug === slug); return item ? { title: item.title, description: item.summary } : {}; }
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const item = services.find((entry) => entry.slug === slug); if (!item) notFound(); return <main id="main-content"><section className="detail-hero"><div className="container"><p className="eyebrow">Service</p><h1>{item.title}</h1><p className="lead">{item.hero}</p><Link className="button button--gold" href="/contact">이 서비스 문의하기</Link></div></section><section className="section"><div className="container"><div className="feature-grid">{item.points.map((point, index) => <article key={point}><span>0{index + 1}</span><h2>{point}</h2><p>현재 상황과 운영 환경을 확인하고 과도한 기능 없이 실제 필요한 범위로 설계합니다.</p></article>)}</div></div></section><section className="sub-cta"><div className="container"><p className="eyebrow">Start Small</p><h2>필요한 기능과 우선순위를<br />함께 정리해보세요.</h2><Link className="button button--gold" href="/contact">프로젝트 상담</Link></div></section></main>; }
