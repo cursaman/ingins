@@ -68,7 +68,7 @@ begin
   perform pg_advisory_xact_lock(hashtext(p_fingerprint));
   if exists(select 1 from submission_rate_limits where fingerprint=p_fingerprint and last_submitted_at > now()-interval '30 seconds') then raise exception 'RATE_LIMITED'; end if;
   insert into submission_rate_limits(fingerprint,last_submitted_at) values(p_fingerprint,now()) on conflict(fingerprint) do update set last_submitted_at=excluded.last_submitted_at;
-  v_receipt := 'CW-' || upper(substr(p_kind,1,1)) || '-' || to_char(now(),'YYYYMMDD') || '-' || upper(encode(gen_random_bytes(3),'hex'));
+  v_receipt := 'INS-' || upper(substr(p_kind,1,1)) || '-' || to_char(now(),'YYYYMMDD') || '-' || upper(encode(gen_random_bytes(3),'hex'));
   if p_kind='inquiry' then
     insert into inquiries(receipt_number,inquiry_type,company_name,contact_name,email,phone,subject,message) values(v_receipt,p_payload->>'inquiryType',nullif(p_payload->>'companyName',''),p_payload->>'name',p_payload->>'email',nullif(p_payload->>'phone',''),p_payload->>'subject',p_payload->>'message');
   elsif p_kind='diagnosis' then

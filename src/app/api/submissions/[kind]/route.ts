@@ -12,7 +12,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   try { body = await request.json(); } catch { return NextResponse.json({ message: "요청 형식을 확인해주세요." }, { status: 400 }); }
   const parsed = submissionSchemas[kind].safeParse(body);
   if (!parsed.success) return NextResponse.json({ message: "입력 내용을 확인해주세요." }, { status: 422 });
-  if (parsed.data.website) return NextResponse.json({ receipt: `CW-${kind[0].toUpperCase()}-${Date.now()}-${randomBytes(3).toString("hex").toUpperCase()}` });
+  if (parsed.data.website) return NextResponse.json({ receipt: `INS-${kind[0].toUpperCase()}-${Date.now()}-${randomBytes(3).toString("hex").toUpperCase()}` });
   const fingerprintSecret = process.env.SUBMISSION_FINGERPRINT_SECRET;
   if (!fingerprintSecret) return NextResponse.json({ message: "신청 저장 설정을 확인해주세요." }, { status: 503 });
   const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? request.headers.get("x-real-ip") ?? "unknown";

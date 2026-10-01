@@ -5,9 +5,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cursamanworks.kr"),
-  title: { default: "커사맨웍스 | 홈페이지와 업무를 함께 개선합니다", template: "%s | 커사맨웍스" },
+  title: { default: "(주)인지아이앤에스 | 홈페이지와 업무를 함께 개선합니다", template: "%s | (주)인지아이앤에스" },
   description: "중소기업의 홈페이지와 반복 업무를 함께 개선하는 웹 제작 파트너입니다.",
-  openGraph: { type: "website", locale: "ko_KR", siteName: "커사맨웍스" },
+  openGraph: { type: "website", locale: "ko_KR", siteName: "(주)인지아이앤에스" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

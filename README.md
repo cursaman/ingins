@@ -1,4 +1,4 @@
-# 커사맨웍스 Next.js 1차 전환
+# (주)인지아이앤에스 Next.js 1차 전환
 
 기존 PHP 홈페이지의 공개 영역을 Next.js App Router와 Supabase로 옮긴 1차 프로젝트입니다. 기존 `C:\Project\cursamanworks`는 수정하지 않습니다.
 
