@@ -5,8 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cursamanworks.kr"),
-  title: { default: "(주)인지아이앤에스 | 홈페이지와 업무를 함께 개선합니다", template: "%s | (주)인지아이앤에스" },
-  description: "중소기업의 홈페이지와 반복 업무를 함께 개선하는 웹 제작 파트너입니다.",
+  title: { default: "(주)인지아이앤에스 | 제조 디지털 혁신", template: "%s | (주)인지아이앤에스" },
+  description: "디지털 트윈, 스마트팩토리, APQP 기반 DQMS와 산업 IoT 플랫폼으로 제조 디지털 혁신을 지원합니다.",
   openGraph: { type: "website", locale: "ko_KR", siteName: "(주)인지아이앤에스" },
 };
 

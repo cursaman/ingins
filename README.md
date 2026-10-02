@@ -1,11 +1,11 @@
 # (주)인지아이앤에스 Next.js 1차 전환
 
-기존 PHP 홈페이지의 공개 영역을 Next.js App Router와 Supabase로 옮긴 1차 프로젝트입니다. 기존 `C:\Project\cursamanworks`는 수정하지 않습니다.
+기존 PHP 홈페이지의 공개 영역을 Next.js App Router와 Supabase로 옮기고, (주)인지아이앤에스의 제조 디지털 혁신 사업 내용을 반영한 1차 프로젝트입니다. 기존 `C:\Project\cursamanworks`는 수정하지 않습니다.
 
 ## 1차 범위
 
-- 공개 홈페이지, 서비스, 진단, 교육, 포트폴리오, 블로그, 회사소개
-- 문의·홈페이지 진단·교육 상담 신청
+- 공개 홈페이지, 서비스, DX 진단, 교육·컨설팅, 사업분야, 기술정보, 회사소개
+- 사업 문의·제조 DX 진단·교육 및 컨설팅 상담 신청
 - Supabase PostgreSQL 저장
 - 서버 입력 검증, 허니팟, DB 기반 30초 요청 제한
 - 반응형 내비게이션, SEO metadata, sitemap, robots, 보안 헤더

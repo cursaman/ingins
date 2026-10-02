@@ -2,5 +2,5 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { portfolioItems } from "@/lib/site-data";
-export const metadata: Metadata = { title: "포트폴리오", description: "문제, 목표와 해결과정 중심의 (주)인지아이앤에스 프로젝트" };
-export default function PortfolioPage() { return <main id="main-content"><PageHero eyebrow="Portfolio" title="문제와 해결과정을 프로젝트로 보여드립니다" description="실제 프로젝트와 비공식 제안을 명확히 구분하고 확인 가능한 내용만 소개합니다." /><section className="section"><div className="container content-grid">{portfolioItems.map((item) => <Link className="content-card" href={`/portfolio/${item.slug}`} key={item.slug}><div className={`visual visual--${item.tone}`}><span>{item.label}</span></div><div><h2>{item.title}</h2><p>{item.summary}</p><strong>프로젝트 상세 →</strong></div></Link>)}</div></section></main>; }
+export const metadata: Metadata = { title: "사업분야", description: "공유 디지털 팩토리, APQP 기반 DQMS와 산업 IoT 융합 사업" };
+export default function PortfolioPage() { return <main id="main-content"><PageHero eyebrow="Business Areas" title="제조 디지털 혁신 사업분야" description="공유 디지털 팩토리, 디지털 품질경영과 산업 IoT 융합을 중심으로 사업을 추진합니다." /><section className="section"><div className="container content-grid">{portfolioItems.map((item) => <Link className="content-card" href={`/portfolio/${item.slug}`} key={item.slug}><div className={`visual visual--${item.tone}`}><span>{item.label}</span></div><div><h2>{item.title}</h2><p>{item.summary}</p><strong>사업 내용 →</strong></div></Link>)}</div></section></main>; }

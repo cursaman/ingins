@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const links = [["/services", "서비스"], ["/diagnosis", "홈페이지 진단"], ["/education", "AI 제작교육"], ["/portfolio", "포트폴리오"], ["/blog", "블로그"], ["/about", "회사소개"]];
+const links = [["/services", "서비스"], ["/diagnosis", "DX 진단"], ["/education", "교육·컨설팅"], ["/portfolio", "사업분야"], ["/blog", "기술정보"], ["/about", "회사소개"]];
 
 export function Header() {
   const pathname = usePathname();
